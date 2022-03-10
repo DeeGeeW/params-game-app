@@ -39,8 +39,16 @@ class ParamsController < ApplicationController
     else
       render json: {message: "hooray!"}
     end
-  # end
-  #   render json: {message: "the url segment is #{input_value}"}
+
+  end
+
+  def url_segment2
+    input_value = params["variable"].upcase
+    if input_value.starts_with?("A") 
+      render json: {message: "Hey, your name starts with the first letter of the alphabet!"}
+    else
+      render json: {message: "your name is #{input_value}"}
+    end
   end
 end
 
