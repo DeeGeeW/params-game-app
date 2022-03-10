@@ -29,8 +29,19 @@ class ParamsController < ApplicationController
     end
   end
 
-
-
+  def url_segment
+    input_value = params["variable"].to_i
+    winning_num = 42
+    if input_value < winning_num
+      render json: {message: "Too Low!"}
+    elsif input_value > winning_num
+      render json: {message: "Too High!"}
+    else
+      render json: {message: "hooray!"}
+    end
+  # end
+  #   render json: {message: "the url segment is #{input_value}"}
+  end
 end
 
 #   def a_params
