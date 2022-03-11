@@ -50,6 +50,16 @@ class ParamsController < ApplicationController
       render json: {message: "your name is #{input_value}"}
     end
   end
+
+  def body_params_method
+    username = params["user_name"]
+    userpassword = params["user_password"]
+    if username == "hugh" && userpassword == "swordfish"
+      render json: {message: "Valid Credentials"}
+    else
+      render json: {message: "Invalid Credentials"}
+    end
+  end
 end
 
 #   def a_params

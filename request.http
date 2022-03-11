@@ -1,0 +1,8 @@
+POST http://localhost:3000/body_params
+content-type: application/json
+
+{
+  "user_name": "hugh", 
+  "user_password": "swordfish"
+
+}
